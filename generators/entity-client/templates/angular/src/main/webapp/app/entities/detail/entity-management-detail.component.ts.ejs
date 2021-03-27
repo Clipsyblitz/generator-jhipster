@@ -16,7 +16,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -%>
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { QRCodeModule } from 'angular2-qrcode';
 import { ActivatedRoute } from '@angular/router';
 
 import { I<%= entityAngularName %> } from '../<%= entityFileName %>.model';
@@ -28,6 +29,13 @@ import { DataUtils } from 'app/core/util/data-util.service';
     selector: '<%= jhiPrefixDashed %>-<%= entityFileName %>-detail',
     templateUrl: './<%= entityFileName %>-detail.component.html'
 })
+
+@NgModule({
+    imports: []
+        QRCodeModule,
+    ]
+})
+
 export class <%= entityAngularName %>DetailComponent implements OnInit {
     <%= entityInstance %>: I<%= entityAngularName %> | null = null;
 
